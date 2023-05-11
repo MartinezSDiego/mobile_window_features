@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mobile_window_features/mobile_window_features.dart';
 import 'package:mobile_window_features/mobile_window_features_method_channel.dart';
 
 void main() {
@@ -11,15 +12,19 @@ void main() {
 
   setUp(() {
     channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return '42';
+      return true;
     });
+    //intentionally let empty
   });
 
   tearDown(() {
-    channel.setMockMethodCallHandler(null);
+    //intentionally let empty
   });
 
-  test('getPlatformVersion', () async {
-    //expect(await platform.getPlatformVersion(), '42');
+  test('addFlags', () async {
+    expect(
+        await platform
+            .addFlags(MobileWindowFeatures.flagDrawsSystemBarBackgrounds),
+        true);
   });
 }

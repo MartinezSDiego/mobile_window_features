@@ -28,4 +28,9 @@ abstract class MobileWindowFeaturesPlatform extends PlatformInterface {
   Future<bool?> clearFlags(int flags);
   Future<bool?> setFlags(int flags, int mask);
   Future<bool?> setDecorFitsSystemWindows(bool decorFitsSystemWindows);
+  Future<bool?> setScreenLimits(int screenLimits);
+  Future<bool?> setStatusBarColor(int color);
+  Future<bool?> setNavigationBarColor(int color);
+  Future<bool?> setStatusBarTheme(int statusBarTheme);
+  Future<bool?> setNavigationBarTheme(int navigationBarTheme);
 }

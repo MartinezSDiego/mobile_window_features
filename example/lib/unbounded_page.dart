@@ -1,9 +1,9 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import 'package:mobile_window_features/mobile_window_features.dart';
+import 'package:mobile_window_features/status_navigation_bars_options.dart';
 
 import 'bounded_page.dart';
 
@@ -12,43 +12,46 @@ class UnboundedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: createBackground(),
-      child: Column(children: [
-        const Text("pruebas"),
-        TextButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const BoundedPage()),
-            );
-          },
-          child: const Text("Go BoundedPage"),
-        )
-      ]),
+    MobileWindowFeatures.setScreenProperties(
+        ScreenLimits.pageDrawBehindTheStatusBarNavigationBar,
+        Colors.transparent,
+        StatusBarThemeMWF.darkStatusBar,
+        Colors.transparent,
+        NavigationBarThemeMWF.darkNavigationBar);
+
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            decoration: createBackground(),
+          ),
+          Column(children: [
+            Row(
+              children: const [
+                Expanded(
+                    child: Text(
+                  "Test",
+                  style: TextStyle(color: Colors.white, fontSize: 40),
+                  textAlign: TextAlign.center,
+                ))
+              ],
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const BoundedPage()),
+                );
+              },
+              child: const Text("Go BoundedPage"),
+            )
+          ]),
+        ],
+      ),
     );
   }
 
   BoxDecoration createBackground() {
-    /*MobileWindowFeatures.setFlags(MobileWindowFeatures.FLAG_LAYOUT_NO_LIMITS,
-        MobileWindowFeatures.FLAG_LAYOUT_NO_LIMITS);
-    MobileWindowFeatures.addFlags(
-        MobileWindowFeatures.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-    MobileWindowFeatures.clearFlags(
-        MobileWindowFeatures.FLAG_TRANSLUCENT_STATUS);
-    MobileWindowFeatures.clearFlags(
-        MobileWindowFeatures.FLAG_TRANSLUCENT_NAVIGATION);
-    MobileWindowFeatures.setDecorFitsSystemWindows(true);
-
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      statusBarIconBrightness: Brightness.light,
-      systemNavigationBarColor: Colors.transparent,
-      systemNavigationBarDividerColor: Colors.transparent,
-      systemStatusBarContrastEnforced: true,
-      systemNavigationBarContrastEnforced: true,
-    ));*/
-
     return const BoxDecoration(
         gradient: LinearGradient(
             begin: Alignment.topCenter,

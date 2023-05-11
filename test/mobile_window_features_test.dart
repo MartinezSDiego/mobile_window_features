@@ -9,30 +9,48 @@ class MockMobileWindowFeaturesPlatform
     implements MobileWindowFeaturesPlatform {
   @override
   Future<bool?> addFlags(int flags) {
-    // TODO: implement addFlags
-    throw UnimplementedError();
+    return Future.value(true);
   }
 
   @override
   Future<bool?> clearFlags(int flags) {
-    // TODO: implement clearFlags
-    throw UnimplementedError();
+    return Future.value(true);
   }
 
   @override
   Future<bool?> setDecorFitsSystemWindows(bool decorFitsSystemWindows) {
-    // TODO: implement setDecorFitsSystemWindows
-    throw UnimplementedError();
+    return Future.value(true);
   }
 
   @override
   Future<bool?> setFlags(int flags, int mask) {
-    // TODO: implement setFlags
-    throw UnimplementedError();
+    return Future.value(true);
   }
 
-  //@override
-  //Future<String?> getPlatformVersion() => Future.value('42');
+  @override
+  Future<bool?> setScreenLimits(int screenLimits) {
+    return Future.value(true);
+  }
+
+  @override
+  Future<bool?> setNavigationBarColor(int color) {
+    return Future.value(true);
+  }
+
+  @override
+  Future<bool?> setNavigationBarTheme(int navigationBarTheme) {
+    return Future.value(true);
+  }
+
+  @override
+  Future<bool?> setStatusBarColor(int color) {
+    return Future.value(true);
+  }
+
+  @override
+  Future<bool?> setStatusBarTheme(int statusBarTheme) {
+    return Future.value(true);
+  }
 }
 
 void main() {
@@ -43,12 +61,14 @@ void main() {
     expect(initialPlatform, isInstanceOf<MethodChannelMobileWindowFeatures>());
   });
 
-  test('getPlatformVersion', () async {
-    MobileWindowFeatures mobileWindowFeaturesPlugin = MobileWindowFeatures();
+  test('addFlags', () async {
     MockMobileWindowFeaturesPlatform fakePlatform =
         MockMobileWindowFeaturesPlatform();
     MobileWindowFeaturesPlatform.instance = fakePlatform;
 
-    //expect(await mobileWindowFeaturesPlugin.getPlatformVersion(), '42');
+    expect(
+        await MobileWindowFeatures.addFlags(
+            MobileWindowFeatures.flagDrawsSystemBarBackgrounds),
+        true);
   });
 }
