@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:ui';
 
 import 'package:mobile_window_features/status_navigation_bars_options.dart';
@@ -99,60 +100,71 @@ class MobileWindowFeatures {
   static const int flagWatchOutsideTouch = 0x00040000;
 
   /// Adds flags [flags] to the WindowManager.LayoutParams
-  static Future<bool?> addFlags(int flags) async {
+  static Future<bool?> addFlags({required int flags}) async {
+    if (!Platform.isAndroid) return Future.value(true);
     return await MobileWindowFeaturesPlatform.instance.addFlags(flags);
   }
 
   /// Clears flags [flags] from the WindowManager.LayoutParams
-  static Future<bool?> clearFlags(int flags) async {
+  static Future<bool?> clearFlags({required int flags}) async {
+    if (!Platform.isAndroid) return Future.value(true);
     return await MobileWindowFeaturesPlatform.instance.clearFlags(flags);
   }
 
   /// Set flags [flags] from the WindowManager.LayoutParams
-  static Future<bool?> setFlags(int flags, int mask) async {
+  static Future<bool?> setFlags({required int flags, required int mask}) async {
+    if (!Platform.isAndroid) return Future.value(true);
     return await MobileWindowFeaturesPlatform.instance.setFlags(flags, mask);
   }
 
   /// Set Decor Fits System Windows [decorFitsSystemWindows] from the Window
   static Future<bool?> setDecorFitsSystemWindows(
-      bool decorFitsSystemWindows) async {
+      {required bool decorFitsSystemWindows}) async {
+    if (!Platform.isAndroid) return Future.value(true);
     return await MobileWindowFeaturesPlatform.instance
         .setDecorFitsSystemWindows(decorFitsSystemWindows);
   }
 
-  static Future<bool?> setScreenLimits(ScreenLimits screenLimits) async {
+  static Future<bool?> setScreenLimits(
+      {required ScreenLimits screenLimits}) async {
+    if (!Platform.isAndroid) return Future.value(true);
     return await MobileWindowFeaturesPlatform.instance
         .setScreenLimits(screenLimits.idScreenLimits);
   }
 
-  static Future<bool?> setStatusBarColor(Color color) async {
+  static Future<bool?> setStatusBarColor({required Color color}) async {
+    if (!Platform.isAndroid) return Future.value(true);
     return await MobileWindowFeaturesPlatform.instance
         .setStatusBarColor(color.value);
   }
 
-  static Future<bool?> setNavigationBarColor(Color color) async {
+  static Future<bool?> setNavigationBarColor({required Color color}) async {
+    if (!Platform.isAndroid) return Future.value(true);
     return await MobileWindowFeaturesPlatform.instance
         .setNavigationBarColor(color.value);
   }
 
   static Future<bool?> setStatusBarTheme(
-      StatusBarThemeMWF statusBarTheme) async {
+      {required StatusBarThemeMWF statusBarTheme}) async {
+    if (!Platform.isAndroid) return Future.value(true);
     return await MobileWindowFeaturesPlatform.instance
         .setStatusBarTheme(statusBarTheme.idStatusBarTheme);
   }
 
   static Future<bool?> setNavigationBarTheme(
-      NavigationBarThemeMWF navigationBarTheme) async {
+      {required NavigationBarThemeMWF navigationBarTheme}) async {
+    if (!Platform.isAndroid) return Future.value(true);
     return await MobileWindowFeaturesPlatform.instance
         .setNavigationBarTheme(navigationBarTheme.idNavigationBarTheme);
   }
 
   static Future<bool?> setScreenProperties(
-      ScreenLimits screenLimits,
-      Color statusBarColor,
-      StatusBarThemeMWF statusBarTheme,
-      Color navigationBarColor,
-      NavigationBarThemeMWF navigationBarTheme) async {
+      {required ScreenLimits screenLimits,
+      required Color statusBarColor,
+      required StatusBarThemeMWF statusBarTheme,
+      required Color navigationBarColor,
+      required NavigationBarThemeMWF navigationBarTheme}) async {
+    if (!Platform.isAndroid) return Future.value(true);
     await MobileWindowFeaturesPlatform.instance
         .setScreenLimits(screenLimits.idScreenLimits);
     await MobileWindowFeaturesPlatform.instance

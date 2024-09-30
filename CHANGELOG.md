@@ -1,3 +1,9 @@
+## 0.0.3
+- Validation added to execute the code just for Android platform, avoiding errors with iOS platform
+
+### Breaking Changes
+- Named parameters in all methods
+
 ## 0.0.2
 - Allow to change the color of the status bar
 - Allow to change the color of the navigation bar
@@ -11,5 +17,4 @@
 - Allow to "setFlags" on the system window of android
 - Allow to "clearFlags" on the system window of android
 - Allow to "setDecorFitsSystemWindows" on the system window of android
-
-* Allow to change some properties on the system window of android
+- Allow to change some properties on the system window of android
