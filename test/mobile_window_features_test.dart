@@ -68,7 +68,7 @@ void main() {
 
     expect(
         await MobileWindowFeatures.addFlags(
-            MobileWindowFeatures.flagDrawsSystemBarBackgrounds),
+            flags: MobileWindowFeatures.flagDrawsSystemBarBackgrounds),
         true);
   });
 }
