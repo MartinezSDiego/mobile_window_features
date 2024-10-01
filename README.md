@@ -9,6 +9,7 @@ This plugin was created to change some necessary configuration in the Android wi
 - Change Android window flags
 
 ## How to use it
+<img src="https://merakidevelop.com.co/public-resources/images/mobile_window_features_screenshot_001.jpg" alt="drawing" width="200"/>
 ```dart
 import 'package:mobile_window_features/mobile_window_features.dart';
 import 'package:mobile_window_features/status_navigation_bars_options.dart';
@@ -30,4 +31,3 @@ class UnboundedPage extends StatelessWidget {
 	);
   }
 ```
-<img src="https://merakidevelop.com.co/public-resources/images/mobile_window_features_screenshot_001.jpg" alt="drawing" width="200"/>
