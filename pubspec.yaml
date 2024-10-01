@@ -1,5 +1,5 @@
 name: mobile_window_features
-description: Plugin created to change some necessary configuartion in the Android window to draw behind the status bar and the navigation bar.
+description: Plugin created to change some necessary configuration in the Android window to draw behind the status bar and the navigation bar.
 version: 0.0.3
 homepage: https://github.com/MartinezSDiego/mobile_window_features?tab=readme-ov-file#readme
 repository: https://github.com/MartinezSDiego/mobile_window_features
@@ -29,6 +29,7 @@ topics:
   - transparent navigation bar
   - remove status bar
   - remove navigation bar
+  - android window flags
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
