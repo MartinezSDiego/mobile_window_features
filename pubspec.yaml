@@ -27,7 +27,6 @@ topics:
   - navigation-bar
   - transparent-status-bar
   - transparent-navigation-bar
-  - remove-status-bar
   - android-window-flags
 
 # For information on the generic Dart part of this file, see the
