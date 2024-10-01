@@ -30,4 +30,4 @@ class UnboundedPage extends StatelessWidget {
 	);
   }
 ```
-![](https://merakidevelop.com.co/public-resources/images/mobile_window_features_screenshot_001.jpg)
+<img src="https://merakidevelop.com.co/public-resources/images/mobile_window_features_screenshot_001.jpg" alt="drawing" width="200"/>

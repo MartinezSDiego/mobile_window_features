@@ -1,6 +1,6 @@
 name: mobile_window_features
 description: Plugin created to change some necessary configuration in the Android window to draw behind the status bar and the navigation bar.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/MartinezSDiego/mobile_window_features?tab=readme-ov-file#readme
 repository: https://github.com/MartinezSDiego/mobile_window_features
 issue_tracker: https://github.com/MartinezSDiego/mobile_window_features/issues
