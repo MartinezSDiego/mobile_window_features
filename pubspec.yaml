@@ -23,11 +23,12 @@ platforms:
   android:
 
 topics:
-  - status bar and navigation bar
-  - transparent status bar and transparent navigation bar
-  - remove status bar and remove navigation bar
-  - android window flags
-  - color status bar and color navigation bar
+  - status-bar
+  - navigation-bar
+  - transparent-status-bar
+  - transparent-navigation-bar
+  - remove-status-bar
+  - android-window-flags
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
